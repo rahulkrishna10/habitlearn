@@ -1,4 +1,4 @@
-#HabitLearn
+<h1>HabitLearn</h1>
 
 Overview
 A simple Spring Boot application to help users track and manage their learning habits, log progress, and set personal goals.
