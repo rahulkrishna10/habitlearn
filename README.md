@@ -1,4 +1,5 @@
-Learning Habit Tracker
+#HabitLearn
+
 Overview
 A simple Spring Boot application to help users track and manage their learning habits, log progress, and set personal goals.
 
