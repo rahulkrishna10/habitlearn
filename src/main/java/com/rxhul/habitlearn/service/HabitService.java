@@ -22,7 +22,7 @@ public class HabitService {
     }
 
     public Habit getHabitsById(long id) {
-        if(!habitRepo.existsById(id)) {
+        if(habitRepo.existsById(id)) {
             return habitRepo.findById(id).get();
         }
         return null;

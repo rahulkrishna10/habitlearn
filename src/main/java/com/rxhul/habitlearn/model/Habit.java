@@ -1,6 +1,7 @@
 package com.rxhul.habitlearn.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,6 +30,7 @@ public class Habit {
     private boolean active = true;
 
     @OneToMany(mappedBy = "habit", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<HabitLog> logs;
 
 }

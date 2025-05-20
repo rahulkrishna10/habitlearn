@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
 @RestController
 @RequestMapping("/api")
 public class HabitController {
@@ -55,7 +54,4 @@ public class HabitController {
         }
         return ResponseEntity.ok("Habit Deleted.");
     }
-
-
-
 }

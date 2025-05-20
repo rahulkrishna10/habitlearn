@@ -16,18 +16,19 @@ import java.util.List;
 public class HabitLogController {
     @Autowired
     HabitLogService habitLogService;
+    @Autowired
     HabitService habitService;
 
-    @GetMapping("/habits/{id}/logs")
-    public ResponseEntity<?> getHabitLogs(@PathVariable long id) {
-        List<HabitLog> habitLogs = habitLogService.getHabitLogs(id);
+    @GetMapping("/habits/{habitId}/logs")
+    public ResponseEntity<?> getHabitLogs(@PathVariable long habitId) {
+        List<HabitLog> habitLogs = habitLogService.getHabitLogs(habitId);
         if(habitLogs == null || habitLogs.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No logs found.");
         }
         return ResponseEntity.ok(habitLogs);
     }
 
-    @PostMapping("/habits/{id}/logs")
+    @PostMapping("/habits/{habitId}/logs")
     public ResponseEntity<?> addHabitLog(@PathVariable long habitId, @RequestBody HabitLog habitLog) {
         Habit habit = habitService.getHabitsById(habitId);
         if(habit == null) {
